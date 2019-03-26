@@ -23,9 +23,11 @@
 
 # User dependent .bashrc file
 
+# If not running tmux, start tmux
+[[ $TERM != "screen" ]] && exec tmux
+
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
-#[[ $TERM != "screen" ]] && exec tmux
 
 
 parse_git_branch() {
