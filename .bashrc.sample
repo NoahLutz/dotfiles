@@ -102,5 +102,8 @@ alias du='du -h'
 
 alias grep='grep --color'                     # show differences in colour
 
+# sets cd to ignore non-directories
+complete -d cd
+
 # ssh-pageant #
 eval $(/usr/bin/ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
