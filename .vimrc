@@ -1,8 +1,8 @@
 " Tab settings
-set tabstop=3
+set tabstop=4
 set softtabstop=0
-set shiftwidth=3
-set expandtab
+set shiftwidth=4
+"set expandtab // this replaces tabs with spaces
 set smarttab
 
 " Editor settings
@@ -24,7 +24,7 @@ set tags=.tags
 "set statusline+=\ %f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
 
 " Bindings
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-h> <C-w><C-h>
