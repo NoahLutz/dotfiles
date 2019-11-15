@@ -2,6 +2,7 @@
 
 
 TIMEOUT=60
+REPO_OWNER=NoahLutz
 
 # Checks if tmux session with name of $1 exits
 # Arguments
@@ -85,7 +86,7 @@ create_session()
       # Check if repo needs to be cloned
       if $cloneRepoFlag; then
          local elapsedTime=0
-         local repoURL=git@github.com:VoltServer/$sessionName.git
+         local repoURL=git@github.com:$REPO_OWNER/$sessionName.git
          tmux -S $socket send-keys -t "$sessionName:terminal" "cd ~/src/" C-m
          sleep 1 # sleep to let command execute
          tmux -S $socket send-keys -t "$sessionName:terminal" -l "git clone $repoURL"
