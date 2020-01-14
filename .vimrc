@@ -24,7 +24,7 @@ set tags=.tags
 "set statusline+=\ %f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
 
 " Bindings
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-h> <C-w><C-h>
