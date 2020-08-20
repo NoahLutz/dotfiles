@@ -85,7 +85,7 @@ create_session()
       # Check if repo needs to be cloned
       if $cloneRepoFlag; then
          local elapsedTime=0
-         local repoURL=git@github.com:VoltServer/$sessionName.git
+         local repoURL=git@github.com:NoahLutz/$sessionName.git
          tmux -S $socket send-keys -t "$sessionName:terminal" "cd ~/src/" C-m
          sleep 1 # sleep to let command execute
          tmux -S $socket send-keys -t "$sessionName:terminal" -l "git clone $repoURL"
