@@ -24,7 +24,7 @@ set tags=.tags
 "set statusline+=\ %f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
 
 " Bindings
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-h> <C-w><C-h>
@@ -32,6 +32,9 @@ nnoremap <C-l> <C-w><C-l>
 
 " Run pathogen
 execute pathogen#infect()
+
+" vimtex settings
+let g:tex_flavor = 'latex'
 
 " Autocommands 
 
@@ -45,10 +48,10 @@ augroup NERDTree_close
 augroup END
 
 " Re-run ctags on *.c *.h file writes
-augroup ctags_refresh
-   autocmd BufWritePost *.c silent exec "!ctags -R ."
-   autocmd BufWritePost *.h silent exec "!ctags -R ."
-augroup END
+"augroup ctags_refresh
+"   autocmd BufWritePost *.c silent exec "!ctags -R ."
+"   autocmd BufWritePost *.h silent exec "!ctags -R ."
+"augroup END
 
 " Macros
 let @c = '0i//0j'
