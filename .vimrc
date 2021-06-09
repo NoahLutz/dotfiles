@@ -15,6 +15,7 @@ filetype plugin indent on
 set directory=$HOME/.vim/swapfiles//
 set scrolloff=5
 set tags=.tags
+set colorcolumn=81
 
 " Statusline
 
@@ -45,10 +46,10 @@ augroup NERDTree_close
 augroup END
 
 " Re-run ctags on *.c *.h file writes
-augroup ctags_refresh
-   autocmd BufWritePost *.c silent exec "!ctags -R ."
-   autocmd BufWritePost *.h silent exec "!ctags -R ."
-augroup END
+"augroup ctags_refresh
+"   autocmd BufWritePost *.c silent exec "!ctags -R ."
+"   autocmd BufWritePost *.h silent exec "!ctags -R ."
+"augroup END
 
 " Macros
 let @c = '0i//0j'
