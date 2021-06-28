@@ -16,6 +16,7 @@ set directory=$HOME/.vim/swapfiles//
 set scrolloff=5
 set tags=.tags
 set colorcolumn=81
+highlight ColorColumn ctermbg=0
 
 " Statusline
 
