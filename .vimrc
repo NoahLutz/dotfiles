@@ -55,7 +55,7 @@ augroup END
 " Macros
 let @c = '0i//0j'
 
-" WSL clipboard
+" WSL clipboard (from https://stackoverflow.com/questions/44480829/how-to-copy-to-clipboard-in-vim-of-bash-on-windows)
 set clipboard=unnamed
 
 autocmd TextYankPost * call system('win32yank.exe -i --crlf', @")
