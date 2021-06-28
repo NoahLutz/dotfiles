@@ -16,7 +16,7 @@ set directory=$HOME/.vim/swapfiles//
 set scrolloff=5
 set tags=.tags
 set colorcolumn=81
-highlight ColorColumn ctermbg=0
+highlight ColorColumn ctermbg=4
 
 " Statusline
 
@@ -54,3 +54,17 @@ augroup END
 
 " Macros
 let @c = '0i//0j'
+
+" WSL clipboard
+set clipboard=unnamed
+
+autocmd TextYankPost * call system('win32yank.exe -i --crlf', @")
+
+function! Paste(mode)
+   let @" = system('win32yank.exe -o --lf')
+   return a:mode
+endfunction
+
+map <expr> p Paste('p')
+map <expr> P Paste('P')
+
