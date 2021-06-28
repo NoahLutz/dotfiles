@@ -2,7 +2,7 @@
 
 
 TIMEOUT=60
-REPO_OWNER=NoahLutz
+REPO_OWNER=Voltserver
 
 # Checks if tmux session with name of $1 exits
 # Arguments
