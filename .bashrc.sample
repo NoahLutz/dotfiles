@@ -94,16 +94,37 @@ HISTCONTROL=ignoreboth
 #   source "${HOME}/.bash_aliases"
 # fi
 #
+
+export PATH="$PATH:/home/noah/bin/"
+
+export COVERITY_AUTHKEY_FILE="/home/noah/.coverity_auth_key.txt"
+export COVERITY_LICENSE_FILE="/home/noah/.coverity_license.dat"
+
 alias ls='ls -la --color=auto'
-alias docker='winpty docker'
+alias git='/home/noah/bin/git_wrapper'
 
 alias df='df -h'
 alias du='du -h'
 
 alias grep='grep --color'                     # show differences in colour
+alias diff='vimdiff'
 
 # sets cd to ignore non-directories
 complete -d cd
 
+bind 'set mark-symlinked-directories on'
+
+
 # ssh-pageant #
-eval $(/usr/bin/ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
+$HOME/bin/gpg-agent-relay start
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+#eval $(/usr/bin/ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
+
+# Start CRON since that does not happen automatically when starting WSL
+#sudo service cron start
+
+# Created by `userpath` on 2022-12-07 15:13:34
+export PATH="$PATH:/home/noah/.local/bin"
+
+# added by pipx (https://github.com/pipxproject/pipx)
+export PATH="/home/noah/.local/bin:$PATH"

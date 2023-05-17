@@ -1,0 +1,38 @@
+#!/bin/bash
+
+linux_cmds=(
+   pull
+   push
+   checkout
+   submodule
+   fetch
+)
+
+LINUX_GIT=/usr/bin/git
+WINDOWS_GIT=git.exe
+
+REGEX_PATTERN="^\/mnt\/c\/"
+
+cmdExecuted=false
+
+# Check current directory, if it's in Windows, check which version of git to use
+if [ `pwd -P | grep "$REGEX_PATTERN"` ]; then
+   # Check if command requires SSH auth (linux only)
+   for i in "${linux_cmds[@]}"; do
+      if [ "$1" = "$i" ]; then 
+         echo "Using linux Git"
+         $LINUX_GIT "$@"
+         cmdExecuted=true
+         break
+      fi
+   done
+
+   # If not, use windows git
+   if [ "$cmdExecuted" = false ]; then
+      echo "using windows Git"
+      $WINDOWS_GIT "$@"
+   fi
+else
+   echo "Using linux Git"
+   $LINUX_GIT "$@"
+fi
