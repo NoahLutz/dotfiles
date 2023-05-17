@@ -15,8 +15,8 @@ filetype plugin indent on
 set directory=$HOME/.vim/swapfiles//
 set scrolloff=5
 set tags=.tags
-set colorcolumn=81
-highlight ColorColumn ctermbg=4
+set colorcolumn=101
+highlight ColorColumn ctermbg=3
 
 " Statusline
 
@@ -32,8 +32,17 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-l> <C-w><C-l>
 
+" Plug packages
+call plug#begin()
+Plug 'pechorin/any-jump.vim'
+call plug#end()
+
 " Run pathogen
 execute pathogen#infect()
+
+" Color Settings
+hi Pmenu ctermbg=Black
+
 
 " Autocommands 
 
@@ -56,7 +65,7 @@ augroup END
 let @c = '0i//0j'
 
 " WSL clipboard (from https://stackoverflow.com/questions/44480829/how-to-copy-to-clipboard-in-vim-of-bash-on-windows)
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 autocmd TextYankPost * call system('win32yank.exe -i --crlf', @")
 
