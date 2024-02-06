@@ -3,6 +3,7 @@
 
 TIMEOUT=60
 REPO_OWNER=Voltserver
+GIT=git
 
 # Checks if tmux session with name of $1 exits
 # Arguments
@@ -89,7 +90,7 @@ create_session()
          local repoURL=git@github.com:$REPO_OWNER/$sessionName.git
          tmux -S $socket send-keys -t "$sessionName:terminal" "cd ~/src/" C-m
          sleep 1 # sleep to let command execute
-         tmux -S $socket send-keys -t "$sessionName:terminal" -l "git clone $repoURL"
+         tmux -S $socket send-keys -t "$sessionName:terminal" -l "$GIT clone $repoURL"
          tmux -S $socket switch-client -t "$sessionName:terminal"
 
          # Wait for directory to exist (with timeout) 

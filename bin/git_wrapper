@@ -1,11 +1,13 @@
 #!/bin/bash
 
 linux_cmds=(
+   clone
    pull
    push
    checkout
    submodule
    fetch
+   diffn
 )
 
 LINUX_GIT=/usr/bin/git
@@ -20,7 +22,6 @@ if [ `pwd -P | grep "$REGEX_PATTERN"` ]; then
    # Check if command requires SSH auth (linux only)
    for i in "${linux_cmds[@]}"; do
       if [ "$1" = "$i" ]; then 
-         echo "Using linux Git"
          $LINUX_GIT "$@"
          cmdExecuted=true
          break
@@ -29,10 +30,8 @@ if [ `pwd -P | grep "$REGEX_PATTERN"` ]; then
 
    # If not, use windows git
    if [ "$cmdExecuted" = false ]; then
-      echo "using windows Git"
       $WINDOWS_GIT "$@"
    fi
 else
-   echo "Using linux Git"
    $LINUX_GIT "$@"
 fi
