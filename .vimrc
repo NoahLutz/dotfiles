@@ -10,6 +10,7 @@ set number
 set splitright
 set splitbelow
 set nowrap
+let c_space_errors = 1
 syntax on
 filetype plugin indent on
 set directory=$HOME/.vim/swapfiles//
