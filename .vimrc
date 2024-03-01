@@ -10,15 +10,14 @@ set number
 set splitright
 set splitbelow
 set nowrap
-let c_space_errors = 1
 syntax on
+let c_space_errors = 1
 filetype plugin indent on
 set directory=$HOME/.vim/swapfiles//
 set scrolloff=5
 set tags=.tags
 set colorcolumn=101
 highlight ColorColumn ctermbg=3
-set iskeyword-=_
 
 " Statusline
 
